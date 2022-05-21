@@ -1,0 +1,1 @@
+SET PATH="%PATH%;E:\flutter\bin"
