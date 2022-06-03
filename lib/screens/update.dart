@@ -16,12 +16,12 @@ class _UpdateProductsPageState extends State<UpdateProductsPage> {
   CollectionReference products =
       FirebaseFirestore.instance.collection('products');
 
-  Future<void> updateUser(id, name, amount) {
+  Future<void> update(id, name, amount) {
     return products
         .doc(id)
         .update({'name': name, 'amount': amount})
-        .then((value) => print("User Updated"))
-        .catchError((error) => print("Failed to update user: $error"));
+        .then((value) => print("Product Updated"))
+        .catchError((error) => print("Failed to update product: $error"));
   }
 
   @override
@@ -122,7 +122,7 @@ class _UpdateProductsPageState extends State<UpdateProductsPage> {
                             ),
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                updateUser(widget.id, name, amount);
+                                update(widget.id, name, amount);
                                 Navigator.pop(context);
                               }
                             },

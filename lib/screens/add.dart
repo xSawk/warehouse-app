@@ -139,7 +139,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
     nameControler.clear();
     amountControler.clear();
 
-    print("dodano");
+    
   }
 
   Future<void> add() {
